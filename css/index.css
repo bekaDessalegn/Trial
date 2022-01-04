@@ -1,0 +1,191 @@
+
+@keyframes name_changer {
+    0% {
+      content: "Estifanos";
+    }
+    35% {
+      content: "Estifanos";
+    }
+    36% {
+      content: "Estifano";
+    }
+    37% {
+      content: "Estifan";
+    }
+    38% {
+      content: "Estifa";
+    }
+    39% {
+      content: "Estif";
+    }
+    40% {
+      content: "Esti";
+    }
+    41% {
+      content: "Est";
+    }
+    42% {
+      content: "Es";
+    }
+    43% {
+      content: "E";
+    }
+    44% {
+      content: "";
+    }
+    61% {
+      content: "";
+    }
+    62% {
+      content: "S";
+    }
+    63% {
+      content: "St";
+    }
+    64% {
+      content: "Sti";
+    }
+    65% {
+      content: "Stiv";
+    }
+    100% {
+      content: "Stiv";
+    }
+  }
+  @keyframes blinker {
+      0%{
+          opacity: 1;
+      }
+      50%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+  }
+main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 42% 5% 45% 8%;
+    grid-template-rows: var(--header_height) auto;
+    align-items: center;
+}
+#landing__photo {
+    width: 300px;
+    border-radius: 50px;
+    border-bottom-left-radius: 500px;
+    border-bottom-right-radius: 500px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    grid-column: 1/2;
+    grid-row: 2/-1;
+    justify-self: end;
+    content: url("../images/photo_large.jpg");
+}
+
+#landing__text-con {
+    color: var(--on_background_color);
+    grid-column: 3/4;
+    grid-row: 2/-1;
+    padding-bottom: 25px;
+}
+
+#landing__text-con__header-underline {
+    height: 2px;
+    width: 5vw;
+    margin-bottom: 5px;
+    background-color: var(--primary_color);
+    border-radius: 10px;
+}
+
+#landing__text-con__text-header {
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+#landing__text-con__text-header__name:after {
+    animation: name_changer 5s linear infinite alternate;
+    content: "Estifanos";
+  }
+  #landing__text-con__text-header__blink{
+      animation: blinker 0.8s linear infinite alternate;
+      border-bottom: 5px solid var(--primary_color);
+    }
+
+#landing__text-con__text-description {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+#landing__text-con__btn {
+    display: block;
+    width: 130px;
+    padding: 10px;
+    font-size: 15px;
+}
+@media screen and (max-width: 750px) {
+
+    main {
+        --photo_height: 200px;
+        grid-template-columns: unset;
+        align-items: unset;
+        /*  */
+        grid-template-rows: var(--header_height) var(--photo_height) auto;
+        row-gap: 30px;
+        justify-items: center;
+    }
+
+    #landing__photo {
+        width: unset;
+        grid-column: unset;
+        justify-self: unset;
+        /*  */
+        height: var(--photo_height);
+        grid-row: 2/3;
+        content: url("../images/photo_small.jpg");
+    }
+
+    #landing__text-con {
+        grid-column: unset;
+        padding-bottom: unset;
+        /*  */
+        display: flex;
+        flex-direction: column;
+        grid-row: 3/-1;
+        padding: 0 5vw;
+        text-align: center;
+    }
+
+    #landing__text-con__header-underline {
+        width: 20%;
+        /*  */
+        margin: 0 40%;
+        margin-bottom: 5px;
+    }
+
+    #landing__text-con__text-header {
+        font-size: 30px;
+        /*  */
+    }
+
+    #landing__text-con__text-description {
+        font-size: 25px;
+        max-width: 450px;
+        /*  */
+    }
+
+    #landing__text-con__btn-a {
+        width: 100%;
+        max-width: 300px;
+        align-self: center;
+        /*  */
+    }
+
+    #landing__text-con__btn {
+        width: 100%;
+        max-width: 300px;
+        align-self: center;
+        padding: 10px 0;
+        font-size: 15px;
+        /*  */
+    }
+}

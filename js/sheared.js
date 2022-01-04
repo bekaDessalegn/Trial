@@ -10,12 +10,12 @@ function get(id) {
 const head = get("header");
 
 //* common HTMLs
-const HEADER_PATH = "../trial/html/header.html";
-const FOOTER_PATH = "../trial/html/footer.html";
+const HEADER_PATH = "../Trial/html/header.html";
+const FOOTER_PATH = "../Trial/html/footer.html";
 
 //* theme related
-const LIGHT_THEME_PATH = "../trial/css/light_theme.css";
-const DARK_THEME_PATH = "../trial/css/dark_theme.css";
+const LIGHT_THEME_PATH = "../Trial/css/light_theme.css";
+const DARK_THEME_PATH = "../Trial/css/dark_theme.css";
 const THEMES = { "light": LIGHT_THEME_PATH, "dark": DARK_THEME_PATH };
 const DEFAULT_THEME = "light";
 const DEFAULT_THEME_PATH = THEMES[DEFAULT_THEME];
